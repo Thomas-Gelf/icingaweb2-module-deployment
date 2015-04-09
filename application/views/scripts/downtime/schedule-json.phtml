@@ -1,0 +1,14 @@
+<?php
+
+$this->output = json_encode((object) array(
+    'success'           => true,
+    'host'              => $this->hostname,
+    'downtime_comment'  => $this->comment,
+    'downtime_duration' => $this->duration,
+    'downtime_start'    => $this->start,
+    'downtime_end'      => $this->end,
+), $this->pretty);
+
+echo $this->render('render-json-output.phtml');
+
+

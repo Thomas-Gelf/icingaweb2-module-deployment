@@ -1,0 +1,12 @@
+Name: Deployment
+Version: 2.0.0-beta1
+Depends: monitoring
+Description: Deployment helper API
+ This Icinga Web 2 module wants to assist your deployment workflows.
+ You want to run real world behaviour tests carried out by your
+ monitoring system on demand? Triggered by your CI platform? Then this
+ module might be a perfect fit.
+ 
+ All you want to achieve is allowing Windows hosts to schedule their
+ downtime by themselves on reboot? Here you go.
+

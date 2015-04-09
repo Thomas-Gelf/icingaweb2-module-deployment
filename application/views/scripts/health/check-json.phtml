@@ -1,0 +1,11 @@
+<?php
+
+$this->output = json_encode((object) array(
+    'success' => true,
+    'healthy' => $this->healthy,
+    'host'    => $this->host,
+    'service' => $this->services
+), $this->pretty);
+
+echo $this->render('render-json-output.phtml');
+

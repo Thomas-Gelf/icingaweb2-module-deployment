@@ -1,0 +1,15 @@
+<?php
+
+if (! $this->pretty) {
+    echo $this->output;
+    return;
+}
+
+?>
+<div class="controls">
+<h1>Pretty JSON Output</h1>
+</div>
+<div class="content">
+<pre><?= $this->escape($this->output) ?></pre>
+</div>
+

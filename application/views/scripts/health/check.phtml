@@ -1,0 +1,20 @@
+<div class="controls">
+<h1><?= $this->escape('Host health: ' . $this->host->host) ?></h1>
+</div>
+
+<div class="content">
+<table class="avp">
+<tr><th>Overall Health</th>
+<?php if ($this->healthy): ?>
+<td class="ok">Everyhing OK or handled</td>
+<?php else: ?>
+<td class="error">Unhandled problems found</td>
+<?php endif ?>
+</tr>
+<tr><th>Host State</th><td><?= $this->escape($host->state) ?></td></tr>
+<tr><th>Host output</th><td><?= $this->escape($host->output) ?></td></tr>
+</table>
+<pre>
+<?= $this->escape(print_r($this->host, 1)) ?>
+<pre>
+</div>

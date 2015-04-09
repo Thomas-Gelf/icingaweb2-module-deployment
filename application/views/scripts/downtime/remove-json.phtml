@@ -1,0 +1,11 @@
+<?php
+
+$this->output = json_encode((object) array(
+    'success'    => true,
+    'total'      => $this->cnt_removed,
+    'downtimes'  => $this->removed_downtimes,
+), $this->pretty);
+
+echo $this->render('render-json-output.phtml');
+
+

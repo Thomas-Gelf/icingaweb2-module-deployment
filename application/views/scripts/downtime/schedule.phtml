@@ -1,0 +1,4 @@
+<div class="content">
+<h3><?= $this->escape($hostname) ?></h3>
+Scheduled a flexible downtime with a maximum duration of <?= sprintf('%dm %ds', floor($duration / 60), ($duration % 60)) ?> allowed to start between <?= date('Y-m-d H:i:s', $start) ?> and <?= date('Y-m-d H:i:s', $end) ?> saying "<?= $this->escape($comment) ?>".
+</div>

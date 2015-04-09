@@ -1,0 +1,9 @@
+<?php
+
+$this->output = json_encode((object) array(
+    'success' => false,
+    'error' => $this->error
+));
+
+echo $this->render('render-json-output.phtml');
+
