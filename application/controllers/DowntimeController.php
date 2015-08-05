@@ -83,7 +83,7 @@ class Deployment_DowntimeController extends ApiController
 
         // Duration is 20 minutes if not set
         $duration = $this->params->get('duration', 20 * 60);
-
+        $fixed = $this->params->get('fixed', false);
         $comment = $this->params->get('comment', 'System went down for reboot');
 
         $cmd = new ScheduleHostDowntimeCommand();
@@ -93,7 +93,7 @@ class Deployment_DowntimeController extends ApiController
             ->setStart($start)
             ->setEnd($end)
             ->setDuration($duration)
-            ->setFixed(false)
+            ->setFixed($fixed)
             ;
 
         $this->getTransport()->send($cmd);
@@ -106,7 +106,7 @@ class Deployment_DowntimeController extends ApiController
             ->setStart($start)
             ->setEnd($end)
             ->setDuration($duration)
-            ->setFixed(false)
+            ->setFixed($fixed)
             ;
 
         $this->getTransport()->send($cmd);
