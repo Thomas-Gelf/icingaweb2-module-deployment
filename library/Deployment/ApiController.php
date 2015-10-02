@@ -91,7 +91,7 @@ class ApiController extends Controller
         if ($this->isJson) {
             $this->view->error = $msg;
             $this->render('jsonerror', null, true);
-            return false;
+            exit;
         } else {
             throw new IcingaException($msg);
         }
