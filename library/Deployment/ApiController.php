@@ -17,6 +17,8 @@ class ApiController extends Controller
 
     protected $backend;
 
+    private $halfBakedTransport;
+
     protected $isJson;
 
     public function init()
@@ -67,13 +69,13 @@ class ApiController extends Controller
 
     protected function getTransport()
     {
-        $instance = $this->params->get('instance');
-        if ($instance = $this->params->get('instance')) {
-            $transport = CommandTransport::create($instance);
-        } else {
-            $transport = CommandTransport::first();
+        if ($this->halfBakedTransport === null) {
+            // This is a completely silly object :( Every call to send
+            // creates many new objects...
+            $this->halfBakedTransport = new CommandTransport();
         }
-        return $transport;
+
+        return $this->halfBakedTransport;
     }
 
     protected function isOk($row)
