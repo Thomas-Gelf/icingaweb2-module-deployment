@@ -8,6 +8,6 @@ if ($this->success) {
     $object->error = $this->error;
 }
 
-$this->output = json_encode($object, $pretty);
+$this->output = json_encode($object, $this->pretty);
 echo $this->render('render-json-output.phtml');
 
