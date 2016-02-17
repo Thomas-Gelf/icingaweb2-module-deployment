@@ -1,0 +1,13 @@
+<?php
+
+$object = (object) array('success' => $this->success);
+
+if ($this->success) {
+    $object->hosts = $this->hosts;
+} else {
+    $object->error = $this->error;
+}
+
+$this->output = json_encode($object, $pretty);
+echo $this->render('render-json-output.phtml');
+
