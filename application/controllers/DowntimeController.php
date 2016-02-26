@@ -45,8 +45,7 @@ class Deployment_DowntimeController extends ApiController
                 $object = $this->getHostObject($downtime->host);
             }
             $cmd = new DeleteDowntimeCommand();
-            $cmd->setObject($object)
-                ->setDowntimeId($downtime->internal_id);
+            $cmd->setDowntimeId($downtime->internal_id);
             $this->getTransport()->send($cmd);
         }
 
