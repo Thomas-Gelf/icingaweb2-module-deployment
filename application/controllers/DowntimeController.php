@@ -26,7 +26,7 @@ class Deployment_DowntimeController extends ApiController
         $columns = array(
             'host'        => 'host_name',
             'service'     => 'service_description',
-            'objecttype'  => 'downtime_objecttype',
+            'objecttype'  => 'object_type',
             'internal_id' => 'downtime_internal_id'
         );
 
