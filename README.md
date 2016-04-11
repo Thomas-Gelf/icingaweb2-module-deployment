@@ -66,6 +66,8 @@ Your deployment tool might call this action as follows:
   for `start`
 * **duration**: maximum duration of this flexible downtime
 * **comment**: a custom comment, default is "System went down for reboot"
+* **fixed**: define if the scheduled downtime is fixed (true)
+  or flexible (false), default is false
 
 ## Remove downtimes
 
@@ -211,4 +213,3 @@ POST http://icingaweb/icingaweb/deployment/health/check?host=localhost&token=ins
     ]
 }
 ```
-
